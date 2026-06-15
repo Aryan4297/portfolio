@@ -147,7 +147,10 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo {
@@ -155,6 +158,7 @@ section {
     font-weight: 700;
     color: var(--primary-darker);
     animation: slideInLeft 0.6s ease-out;
+    flex-basis: 100%;
 }
 
 .nav-menu {
@@ -162,6 +166,9 @@ section {
     list-style: none;
     gap: 30px;
     animation: slideInRight 0.6s ease-out;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 100%;
 }
 
 .nav-link {
@@ -170,6 +177,7 @@ section {
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -194,9 +202,9 @@ section {
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--white) 100%);
-    padding: 100px 20px;
+    padding: 80px 20px;
     text-align: center;
-    min-height: 600px;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,6 +213,7 @@ section {
 .hero-content {
     max-width: 600px;
     animation: fadeInUp 0.8s ease-out;
+    width: 100%;
 }
 
 .profile-photo {
@@ -225,14 +234,14 @@ section {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: clamp(28px, 8vw, 48px);
     margin-bottom: 10px;
     color: var(--text-color);
     animation: slideInLeft 1s ease-out;
 }
 
 .subtitle {
-    font-size: 20px;
+    font-size: clamp(16px, 5vw, 20px);
     color: var(--primary-darker);
     margin-bottom: 30px;
     animation: slideInRight 1s ease-out;
@@ -248,13 +257,14 @@ section {
 
 .btn {
     padding: 12px 30px;
-    font-size: 16px;
+    font-size: clamp(14px, 4vw, 16px);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 600;
+    min-width: 150px;
 }
 
 .btn-primary {
@@ -282,12 +292,12 @@ section {
 
 /* About Section */
 .about {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px;
     background-color: var(--light-gray);
 }
 
 .about h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 7vw, 36px);
     margin-bottom: 30px;
     color: var(--primary-darker);
     text-align: center;
@@ -295,7 +305,7 @@ section {
 }
 
 .about-text {
-    font-size: 16px;
+    font-size: clamp(14px, 4vw, 16px);
     line-height: 1.8;
     margin-bottom: 40px;
     text-align: center;
@@ -305,10 +315,10 @@ section {
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     background-color: var(--white);
-    padding: 40px;
+    padding: clamp(20px, 5vw, 40px);
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
     animation: fadeInUp 0.8s ease-out 0.3s both;
@@ -331,7 +341,7 @@ section {
 .label {
     font-weight: 700;
     color: var(--primary-darker);
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -340,6 +350,8 @@ section {
     color: var(--primary-darker);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: clamp(13px, 3.5vw, 16px);
+    word-break: break-word;
 }
 
 .info-item a:hover {
@@ -349,15 +361,16 @@ section {
 
 .info-item span {
     color: var(--text-color);
+    font-size: clamp(13px, 3.5vw, 16px);
 }
 
 /* Experience Section */
 .experience {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px;
 }
 
 .experience h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 7vw, 36px);
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
@@ -366,13 +379,13 @@ section {
 
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
 .experience-card {
     background-color: var(--primary-color);
-    padding: 30px;
+    padding: clamp(20px, 5vw, 30px);
     border-radius: 10px;
     border-left: 5px solid var(--primary-darker);
     transition: all 0.3s ease;
@@ -388,7 +401,7 @@ section {
 }
 
 .experience-card h3 {
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     margin-bottom: 8px;
     color: var(--text-color);
 }
@@ -397,10 +410,11 @@ section {
     font-weight: 700;
     color: var(--primary-darker);
     margin-bottom: 5px;
+    font-size: clamp(14px, 3.5vw, 16px);
 }
 
 .date {
-    font-size: 13px;
+    font-size: clamp(12px, 3vw, 13px);
     color: #666;
     margin-bottom: 15px;
 }
@@ -416,7 +430,7 @@ section {
     margin-bottom: 10px;
     padding-left: 20px;
     position: relative;
-    font-size: 14px;
+    font-size: clamp(13px, 3.5vw, 14px);
     line-height: 1.6;
     transition: all 0.3s ease;
 }
@@ -446,7 +460,7 @@ section {
 }
 
 .certificate-label {
-    font-size: 13px;
+    font-size: clamp(11px, 3vw, 13px);
     font-weight: 600;
     color: var(--primary-darker);
     text-transform: uppercase;
@@ -477,23 +491,14 @@ section {
     border-color: #1976D2;
 }
 
-.cert-link::after {
-    content: '';
-    display: block;
-    font-size: 12px;
-    color: var(--primary-darker);
-    margin-top: 8px;
-    font-weight: 600;
-}
-
 /* Skills Section */
 .skills {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px;
     background-color: var(--light-gray);
 }
 
 .skills h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 7vw, 36px);
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
@@ -502,13 +507,13 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .skill-category h3 {
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     margin-bottom: 20px;
     color: var(--primary-darker);
 }
@@ -524,7 +529,7 @@ section {
     color: var(--white);
     padding: 8px 16px;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: default;
@@ -532,17 +537,17 @@ section {
 
 .skill-tag:hover {
     background-color: #1976D2;
-    transform: scale(1.1) rotateY(5deg);
+    transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
 /* Certificates Section */
 .certificates {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px;
 }
 
 .certificates h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 7vw, 36px);
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
@@ -557,13 +562,14 @@ section {
     box-shadow: 0 4px 15px rgba(33, 150, 243, 0.15);
     margin-bottom: 30px;
     animation: fadeInUp 0.8s ease-out 0.2s both;
+    width: 100%;
 }
 
 .slide {
     display: none;
     text-align: center;
-    padding: 40px 20px;
-    min-height: 400px;
+    padding: clamp(20px, 5vw, 40px);
+    min-height: 300px;
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -578,7 +584,9 @@ section {
 
 .slide img {
     max-width: 100%;
-    max-height: 500px;
+    max-height: 60vh;
+    width: auto;
+    height: auto;
     border-radius: 8px;
     animation: slideInUp 0.5s ease-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -601,13 +609,13 @@ section {
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: 45px;
-    height: 45px;
-    margin-top: -22px;
+    width: clamp(35px, 10vw, 45px);
+    height: clamp(35px, 10vw, 45px);
+    margin-top: calc(clamp(35px, 10vw, 45px) / -2);
     padding: 0;
     color: var(--primary-darker);
     font-weight: bold;
-    font-size: 24px;
+    font-size: clamp(18px, 5vw, 24px);
     transition: all 0.3s ease;
     border-radius: 3px;
     user-select: none;
@@ -632,17 +640,17 @@ section {
 }
 
 .prev {
-    left: 15px;
+    left: clamp(10px, 3vw, 15px);
 }
 
 .next {
-    right: 15px;
+    right: clamp(10px, 3vw, 15px);
 }
 
 /* Dots */
 .dots-container {
     text-align: center;
-    padding: 20px 0;
+    padding: clamp(15px, 4vw, 20px) 0;
     animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
@@ -671,7 +679,7 @@ section {
 .certificate-note {
     text-align: center;
     color: #666;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     margin-top: 20px;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
@@ -685,12 +693,12 @@ section {
 
 /* Education Section */
 .education {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px;
     background-color: var(--light-gray);
 }
 
 .education h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 7vw, 36px);
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
@@ -704,7 +712,7 @@ section {
 
 .education-item {
     background-color: var(--white);
-    padding: 30px;
+    padding: clamp(20px, 5vw, 30px);
     border-radius: 10px;
     border-left: 5px solid var(--primary-darker);
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
@@ -717,7 +725,7 @@ section {
 }
 
 .education-item h3 {
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     margin-bottom: 8px;
     color: var(--text-color);
 }
@@ -726,20 +734,21 @@ section {
     color: var(--primary-darker);
     font-weight: 600;
     margin-bottom: 5px;
+    font-size: clamp(13px, 3.5vw, 16px);
 }
 
 .education-item .date {
     color: #666;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
 }
 
 /* Languages Section */
 .languages {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px;
 }
 
 .languages h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 7vw, 36px);
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
@@ -748,13 +757,13 @@ section {
 
 .language-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
 }
 
 .language-item {
     background-color: var(--primary-color);
-    padding: 25px;
+    padding: clamp(20px, 4vw, 25px);
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
@@ -774,7 +783,7 @@ section {
 
 .language-name {
     display: block;
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: 8px;
@@ -783,7 +792,7 @@ section {
 
 .language-level {
     display: block;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     color: var(--primary-darker);
     font-weight: 600;
     transition: color 0.3s ease;
@@ -791,20 +800,20 @@ section {
 
 /* Contact Section */
 .contact {
-    padding: 80px 20px;
+    padding: clamp(60px, 10vw, 80px) 20px;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--white) 100%);
     text-align: center;
 }
 
 .contact h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 7vw, 36px);
     margin-bottom: 20px;
     color: var(--primary-darker);
     animation: fadeInUp 0.8s ease-out;
 }
 
 .contact > .container > p {
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     color: var(--text-color);
     margin-bottom: 40px;
     animation: fadeInUp 0.8s ease-out 0.1s both;
@@ -827,6 +836,8 @@ section {
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-block;
+    font-size: clamp(14px, 4vw, 16px);
+    min-width: 140px;
 }
 
 .contact-btn:hover {
@@ -844,33 +855,39 @@ section {
     background-color: var(--text-color);
     color: var(--white);
     text-align: center;
-    padding: 30px 20px;
+    padding: clamp(20px, 4vw, 30px);
     margin-top: 0;
     animation: fadeIn 0.8s ease-out;
 }
 
 .footer p {
     margin: 0;
+    font-size: clamp(12px, 3vw, 16px);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .nav-container {
+        min-height: auto;
+        gap: 10px;
+    }
+
+    .logo {
+        flex-basis: 100%;
+        font-size: 20px;
+    }
+
     .nav-menu {
-        gap: 15px;
-        font-size: 14px;
+        gap: clamp(10px, 2vw, 15px);
+        font-size: 12px;
     }
 
-    .hero h1 {
-        font-size: 36px;
+    .nav-link {
+        font-size: clamp(11px, 2.5vw, 13px);
     }
 
-    .subtitle {
-        font-size: 18px;
-    }
-
-    .profile-photo {
-        width: 120px;
-        height: 120px;
+    .hero {
+        padding: 60px 20px;
     }
 
     .hero-buttons {
@@ -881,63 +898,65 @@ section {
         width: 100%;
     }
 
-    h2 {
-        font-size: 28px;
+    .contact-buttons {
+        flex-direction: column;
     }
 
-    .experience-grid,
-    .skills-grid,
-    .language-list {
+    .contact-btn {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .experience-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .language-list {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
     }
 
     .contact-info {
         grid-template-columns: 1fr;
-    }
-
-    .prev,
-    .next {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
+        gap: 15px;
     }
 
     .cert-thumbnail {
-        max-width: 120px;
+        max-width: 100px;
     }
 }
 
-@media (max-width: 480px) {
-    .nav-menu {
-        gap: 10px;
-        font-size: 12px;
+/* Small Devices (481px - 768px) */
+@media (max-width: 768px) {
+    .nav-container {
+        gap: 15px;
     }
 
     .logo {
-        font-size: 18px;
+        flex-basis: 100%;
+        font-size: 22px;
     }
 
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .subtitle {
-        font-size: 14px;
+    .nav-menu {
+        gap: 15px;
+        font-size: 13px;
     }
 
     .hero {
-        padding: 60px 20px;
-        min-height: auto;
+        padding: 70px 20px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
     }
 
     .btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    h2 {
-        font-size: 24px;
-        margin-bottom: 30px;
+        width: 100%;
     }
 
     .contact-buttons {
@@ -948,11 +967,131 @@ section {
         width: 100%;
     }
 
-    .cert-thumbnail {
-        max-width: 100px;
+    .experience-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
     }
 
-    .experience-card {
-        padding: 20px;
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .language-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .cert-thumbnail {
+        max-width: 130px;
+    }
+}
+
+/* Medium Devices (769px - 1024px) */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .experience-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .language-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .cert-thumbnail {
+        max-width: 140px;
+    }
+}
+
+/* Large Devices (1025px and above) */
+@media (min-width: 1025px) {
+    .nav-container {
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        flex-basis: auto;
+    }
+
+    .nav-menu {
+        flex-basis: auto;
+    }
+
+    .experience-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .language-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .cert-thumbnail {
+        max-width: 150px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .contact-btn {
+        padding: 15px 35px;
+    }
+
+    .skill-tag {
+        padding: 10px 18px;
+    }
+
+    .prev,
+    .next {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .hero-buttons,
+    .contact-buttons,
+    .dots-container,
+    .prev,
+    .next {
+        display: none;
+    }
+
+    section {
+        page-break-inside: avoid;
     }
 }
