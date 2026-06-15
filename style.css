@@ -377,6 +377,8 @@ section {
     border-left: 5px solid var(--primary-darker);
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .experience-card:hover {
@@ -406,6 +408,8 @@ section {
 .experience-card ul {
     list-style: none;
     padding-left: 0;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .experience-card li {
@@ -427,6 +431,59 @@ section {
     left: 0;
     color: var(--primary-darker);
     font-weight: bold;
+}
+
+/* Certificate Attachment Styles */
+.certificate-attachment {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.certificate-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-darker);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.cert-link {
+    display: block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cert-thumbnail {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--primary-darker);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15);
+}
+
+.cert-link:hover .cert-thumbnail {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 6px 16px rgba(33, 150, 243, 0.3);
+    border-color: #1976D2;
+}
+
+.cert-link::after {
+    content: '';
+    display: block;
+    font-size: 12px;
+    color: var(--primary-darker);
+    margin-top: 8px;
+    font-weight: 600;
 }
 
 /* Skills Section */
@@ -844,6 +901,10 @@ section {
         height: 35px;
         font-size: 18px;
     }
+
+    .cert-thumbnail {
+        max-width: 120px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -885,5 +946,13 @@ section {
 
     .contact-btn {
         width: 100%;
+    }
+
+    .cert-thumbnail {
+        max-width: 100px;
+    }
+
+    .experience-card {
+        padding: 20px;
     }
 }
