@@ -15,6 +15,10 @@
     --border-color: #BBDEFB;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
@@ -28,6 +32,93 @@ body {
     padding: 0 20px;
 }
 
+/* Fade In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to sections */
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.experience-card,
+.language-item,
+.education-item {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.experience-card:nth-child(1) { animation-delay: 0.1s; }
+.experience-card:nth-child(2) { animation-delay: 0.2s; }
+.experience-card:nth-child(3) { animation-delay: 0.3s; }
+.experience-card:nth-child(4) { animation-delay: 0.4s; }
+
+.language-item:nth-child(1) { animation-delay: 0.1s; }
+.language-item:nth-child(2) { animation-delay: 0.2s; }
+.language-item:nth-child(3) { animation-delay: 0.3s; }
+
+.education-item:nth-child(1) { animation-delay: 0.1s; }
+.education-item:nth-child(2) { animation-delay: 0.2s; }
+.education-item:nth-child(3) { animation-delay: 0.3s; }
+
+.skill-tag {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.skill-tag:nth-child(1) { animation-delay: 0.1s; }
+.skill-tag:nth-child(2) { animation-delay: 0.15s; }
+.skill-tag:nth-child(3) { animation-delay: 0.2s; }
+.skill-tag:nth-child(4) { animation-delay: 0.25s; }
+.skill-tag:nth-child(5) { animation-delay: 0.3s; }
+.skill-tag:nth-child(6) { animation-delay: 0.35s; }
+
+.info-item {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.info-item:nth-child(1) { animation-delay: 0.1s; }
+.info-item:nth-child(2) { animation-delay: 0.2s; }
+.info-item:nth-child(3) { animation-delay: 0.3s; }
+.info-item:nth-child(4) { animation-delay: 0.4s; }
+
 /* Navigation Bar */
 .navbar {
     background-color: var(--white);
@@ -35,6 +126,18 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    animation: slideInDown 0.5s ease-out;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-container {
@@ -51,19 +154,37 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: var(--primary-darker);
+    animation: slideInLeft 0.6s ease-out;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 30px;
+    animation: slideInRight 0.6s ease-out;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-darker);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .nav-link:hover {
@@ -83,6 +204,7 @@ body {
 
 .hero-content {
     max-width: 600px;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .profile-photo {
@@ -93,18 +215,27 @@ body {
     margin-bottom: 30px;
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+    animation: slideInDown 0.8s ease-out;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(33, 150, 243, 0.3);
+    transition: all 0.3s ease;
 }
 
 .hero h1 {
     font-size: 48px;
     margin-bottom: 10px;
     color: var(--text-color);
+    animation: slideInLeft 1s ease-out;
 }
 
 .subtitle {
     font-size: 20px;
     color: var(--primary-darker);
     margin-bottom: 30px;
+    animation: slideInRight 1s ease-out;
 }
 
 .hero-buttons {
@@ -112,6 +243,7 @@ body {
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
+    animation: fadeInUp 1.2s ease-out;
 }
 
 .btn {
@@ -133,6 +265,7 @@ body {
 .btn-primary:hover {
     background-color: #1976D2;
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -144,6 +277,7 @@ body {
 .btn-secondary:hover {
     background-color: var(--primary-dark);
     color: var(--white);
+    transform: translateY(-2px);
 }
 
 /* About Section */
@@ -157,6 +291,7 @@ body {
     margin-bottom: 30px;
     color: var(--primary-darker);
     text-align: center;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .about-text {
@@ -165,6 +300,7 @@ body {
     margin-bottom: 40px;
     text-align: center;
     color: var(--text-color);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .contact-info {
@@ -175,12 +311,21 @@ body {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+    animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .info-item {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    padding: 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background-color: var(--primary-color);
+    transform: translateX(5px);
 }
 
 .label {
@@ -216,6 +361,7 @@ body {
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .experience-grid {
@@ -234,8 +380,9 @@ body {
 }
 
 .experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.25);
+    border-left-width: 8px;
 }
 
 .experience-card h3 {
@@ -267,6 +414,11 @@ body {
     position: relative;
     font-size: 14px;
     line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.experience-card li:hover {
+    padding-left: 25px;
 }
 
 .experience-card li:before {
@@ -288,12 +440,14 @@ body {
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .skill-category h3 {
@@ -321,7 +475,8 @@ body {
 
 .skill-tag:hover {
     background-color: #1976D2;
-    transform: scale(1.05);
+    transform: scale(1.1) rotateY(5deg);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
 /* Certificates Section */
@@ -334,6 +489,7 @@ body {
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .slideshow-container {
@@ -343,6 +499,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(33, 150, 243, 0.15);
     margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .slide {
@@ -350,7 +507,7 @@ body {
     text-align: center;
     padding: 40px 20px;
     min-height: 400px;
-    animation: fade 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .slide.fade {
@@ -359,20 +516,25 @@ body {
 
 .slide.active {
     display: block;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .slide img {
     max-width: 100%;
     max-height: 500px;
     border-radius: 8px;
+    animation: slideInUp 0.5s ease-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes fade {
+@keyframes slideInUp {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -403,6 +565,13 @@ body {
 .next:hover {
     background-color: var(--primary-darker);
     color: var(--white);
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.prev:active,
+.next:active {
+    transform: scale(0.95);
 }
 
 .prev {
@@ -417,6 +586,7 @@ body {
 .dots-container {
     text-align: center;
     padding: 20px 0;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .dot {
@@ -427,15 +597,18 @@ body {
     background-color: var(--border-color);
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .dot.active {
     background-color: var(--primary-darker);
+    transform: scale(1.2);
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
 }
 
 .dot:hover {
     background-color: var(--primary-dark);
+    transform: scale(1.15);
 }
 
 .certificate-note {
@@ -443,6 +616,7 @@ body {
     color: #666;
     font-size: 14px;
     margin-top: 20px;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .certificate-note code {
@@ -463,6 +637,7 @@ body {
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .education-timeline {
@@ -476,6 +651,12 @@ body {
     border-radius: 10px;
     border-left: 5px solid var(--primary-darker);
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+    transition: all 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
 }
 
 .education-item h3 {
@@ -505,6 +686,7 @@ body {
     margin-bottom: 50px;
     color: var(--primary-darker);
     text-align: center;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .language-list {
@@ -523,8 +705,14 @@ body {
 }
 
 .language-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.25);
+    background-color: var(--primary-dark);
+}
+
+.language-item:hover .language-name,
+.language-item:hover .language-level {
+    color: var(--white);
 }
 
 .language-name {
@@ -533,6 +721,7 @@ body {
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: 8px;
+    transition: color 0.3s ease;
 }
 
 .language-level {
@@ -540,6 +729,7 @@ body {
     font-size: 14px;
     color: var(--primary-darker);
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 /* Contact Section */
@@ -553,12 +743,14 @@ body {
     font-size: 36px;
     margin-bottom: 20px;
     color: var(--primary-darker);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .contact > .container > p {
     font-size: 18px;
     color: var(--text-color);
     margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .contact-buttons {
@@ -566,6 +758,7 @@ body {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .contact-btn {
@@ -581,8 +774,12 @@ body {
 
 .contact-btn:hover {
     background-color: #1976D2;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3);
+}
+
+.contact-btn:active {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
 /* Footer */
@@ -592,6 +789,7 @@ body {
     text-align: center;
     padding: 30px 20px;
     margin-top: 0;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .footer p {
