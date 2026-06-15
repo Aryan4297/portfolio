@@ -570,7 +570,9 @@ section {
     text-align: center;
     padding: clamp(20px, 5vw, 40px);
     min-height: 300px;
-    animation: fadeIn 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s ease;
 }
 
 .slide.fade {
@@ -579,7 +581,8 @@ section {
 
 .slide.active {
     display: block;
-    animation: fadeIn 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .slide img {
@@ -590,6 +593,9 @@ section {
     border-radius: 8px;
     animation: slideInUp 0.5s ease-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    -webkit-user-drag: none;
+    touch-action: pan-y;
 }
 
 @keyframes slideInUp {
