@@ -541,6 +541,127 @@ section {
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects {
+    padding: clamp(60px, 10vw, 80px) 20px;
+    background-color: var(--white);
+}
+
+.projects h2 {
+    font-size: clamp(28px, 7vw, 36px);
+    margin-bottom: 50px;
+    color: var(--primary-darker);
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        #ffffff
+    );
+
+    padding: 30px;
+    border-radius: 15px;
+
+    border-top: 5px solid var(--primary-darker);
+
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.12);
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 10px 25px rgba(33, 150, 243, 0.25);
+}
+
+.project-card h3 {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    color: var(--primary-darker);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.project-description {
+    line-height: 1.7;
+    color: #555;
+    flex-grow: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.project-btn {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background-color: var(--primary-darker);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: #1976D2;
+    transform: translateY(-2px);
+}
+
+.project-btn.secondary {
+    background-color: transparent;
+    color: var(--primary-darker);
+    border: 2px solid var(--primary-darker);
+}
+
+.project-btn.secondary:hover {
+    background-color: var(--primary-darker);
+    color: white;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-btn {
+        text-align: center;
+        width: 100%;
+    }
+}
+
 /* Certificates Section */
 .certificates {
     padding: clamp(60px, 10vw, 80px) 20px;
