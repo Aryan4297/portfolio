@@ -204,7 +204,7 @@ section {
     background:
         linear-gradient(rgba(227, 242, 253, 0.582), rgba(255, 255, 255, 0.897)),
         url("assets/hero-bg3.png") center/cover no-repeat;
-    padding: 100px 20px;
+    padding: 80px 20px;
     text-align: center;
     min-height: auto;
     display: flex;
