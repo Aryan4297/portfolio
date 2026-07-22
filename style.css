@@ -201,7 +201,9 @@ section {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--white) 100%);
+    background:
+        linear-gradient(rgba(227, 242, 253, 0.75), rgba(255, 255, 255, 0.9)),
+        url("assets/hero-bg.png") center/cover no-repeat;
     padding: 80px 20px;
     text-align: center;
     min-height: auto;
