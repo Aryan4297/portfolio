@@ -202,7 +202,7 @@ section {
 /* Hero Section */
 .hero {
     background:
-        linear-gradient(rgba(227, 242, 253, 0.75), rgba(255, 255, 255, 0.9)),
+        linear-gradient(rgba(227, 242, 253, 0.158), rgba(255, 255, 255, 0.089)),
         url("assets/hero-bg.png") center/cover no-repeat;
     padding: 80px 20px;
     text-align: center;
