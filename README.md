@@ -12,20 +12,7 @@ A modern, minimalistic portfolio website showcasing professional achievements, p
 
 ## 📁 Folder Structure
 
-```
-portfolio/
-├── index.html           # Main portfolio page
-├── style.css           # Styling (light blue & white theme)
-├── script.js           # JavaScript for interactive features
-├── README.md           # This file
-├── certificates/      
-│   ├── certificate1.jpg
-│   ├── certificate2.jpg
-│   └── certificate3.jpg
-└── assets/           
-    ├── profile-photo.jpg
-    └── resume.pdf
-```
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/aryan4297/portfolio?utm_source=readme&utm_medium=badge)
 
 
 ## 📝 License
