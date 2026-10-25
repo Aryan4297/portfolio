@@ -14,7 +14,7 @@ A modern, minimalistic portfolio website showcasing professional achievements, p
 
 [![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/aryan4297/portfolio?utm_source=readme&utm_medium=badge)
 
-
+[![Chat with Repo](https://badge.forgithub.com/Aryan4297/portfolio/blob/main/README.md?badge=chat)](https://uithub.com/Aryan4297/portfolio/blob/main/README.md)
 ## 📝 License
 
 Feel free to use this portfolio template for personal use.
