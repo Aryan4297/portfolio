@@ -19,11 +19,71 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Arctic Frost - Aura (glass) */
+
+/* Base color on BODY - blend modes composite against this */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
-    background-color: var(--white);
-    line-height: 1.6;
+  background-color: #faf8f2;
+}
+
+.aura-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; /* height must be explicit - absolute layers add none */
+  /* NO background-color - layers blend against body */
+}
+
+/* Layer 1 - normal */
+.aura-layer-1 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(207,250,254,0.9) 0%, rgba(165,243,252,0.4) 50%, rgba(34,211,238,0.3) 100%);
+  mix-blend-mode: normal;
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Layer 2 - multiply */
+.aura-layer-2 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(6,182,212,0.5) 0%, transparent 40%);
+  mix-blend-mode: multiply;
+  filter: blur(125px); /* use 180px on desktop */
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Layer 3 - multiply */
+.aura-layer-3 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 70%, rgba(14,165,233,0.4) 0%, transparent 35%);
+  mix-blend-mode: multiply;
+  filter: blur(155px); /* use 223px on desktop */
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Layer 4 - multiply */
+.aura-layer-4 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.4) 100%);
+  mix-blend-mode: multiply;
+  filter: blur(50px); /* use 72px on desktop */
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Content wrapper - keep it above the absolute layers */
+.aura-content {
+  position: relative;
+  z-index: 1;
 }
 
 .container {
